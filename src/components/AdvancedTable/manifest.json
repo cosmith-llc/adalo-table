@@ -1,0 +1,979 @@
+{
+  "name": "AdvancedTable",
+  "displayName": "Advanced Table",
+  "icon": "./example-thumbnail.png",
+  "defaultWidth": 375,
+  "defaultHeight": 700,
+  "components": "./index.js",
+  "description": "A customizable list component",
+  "version": "1.0.0",
+  "resizeY": true,
+  "snappingRules": {
+    "snap": true,
+    "snapType": "screenEdge",
+    "lock": {
+      "left": 0,
+      "right": 0,
+      "top": 20
+    }
+  },
+  "props": [
+    {
+      "name": "records",
+      "displayName": "Table Data",
+      "type": "list",
+      "description": "Data in the table."
+    },
+    {
+      "name": "tableTitle",
+      "displayName": "Table title",
+      "type": "text",
+      "default": "",
+      "description": "Title to show in the header of the table",
+      "styles": {
+        "fontFamily": "@heading",
+        "fontWeight": "400",
+        "color": "@text",
+        "fontSize": "26",
+        "textAlign": "left"
+      }
+    },
+    {
+      "name": "pageSize",
+      "displayName": "Table page size",
+      "type": "number",
+      "default": 20,
+      "description": "Number of records to show in each page"
+    },
+    {
+      "name": "onPress",
+      "displayName": "Click Actions",
+      "type": "action",
+      "role": "listItem",
+      "reference": "records"
+    }
+  ],
+  "childComponents": [
+    {
+      "name": "uiquecode",
+      "displayName": "Unique Code Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 1
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "text",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "reportedby",
+      "displayName": "Reported By Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Reported By",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 2
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "text",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "affectedperson",
+      "displayName": "Affected Person Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Affected Person",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 3
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "text",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "incidentstype",
+      "displayName": "Incident Type Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Incident Type",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 4
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "badge",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "displayName": "Description Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Description",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 5
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "text",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "severity",
+      "displayName": "Severity Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Severity",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 6
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "badge",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "Low:#73c13a,Moderate:#f79b35,Critical:#d55c5d,High: #f73f3f",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "displayName": "Status Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Status",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 7
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "colored-select",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "For Review:#f79527, Resolved:#65bb24",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "onChange",
+          "displayName": "On Change",
+          "description": "Triggered when the status is changed",
+          "type": "action",
+          "arguments": [
+            {
+              "name": "selectedValue",
+              "type": "text",
+              "displayName": "Selected Value",
+              "description": "The value selected in the dropdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "reporteddate",
+      "displayName": "Reported Date Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Reported Date",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 8
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "text",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "trade",
+      "displayName": "Trade Column",
+      "role": "listItem",
+      "reference": "records",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "text",
+          "default": "Trade",
+          "styles": {
+            "fontFamily": "@heading",
+            "fontWeight": "600",
+            "color": "#757575",
+            "textAlignment": "center",
+            "fontSize": "15",
+            "textAlign": "left"
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": ""
+        },
+        {
+          "name": "actionable",
+          "displayName": "Activate/Deactivate action",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "visible",
+          "displayName": "Visible",
+          "type": "boolean",
+          "helpText": "Make this column visible/invisible",
+          "default": true
+        },
+        {
+          "name": "order",
+          "displayName": "Column Order",
+          "type": "number",
+          "helpText": "The order of this column in the table",
+          "default": 9
+        },
+        {
+          "name": "type",
+          "displayName": "Type of this column",
+          "type": "text",
+          "default": "badge",
+          "control": {
+            "type": "menu",
+            "options": [
+              {
+                "label": "Text",
+                "value": "text"
+              },
+              {
+                "label": "Badge",
+                "value": "badge"
+              },
+              {
+                "label": "Colored Select",
+                "value": "colored-select"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caseSensitive",
+          "displayName": "Case sensitive",
+          "helpText": "If case sensitivity will be taken into consideration",
+          "type": "boolean",
+          "default": true,
+          "control": {
+            "type": "checkbox"
+          },
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        },
+        {
+          "name": "valuesToColors",
+          "displayName": "Values to colors",
+          "helpText": "Write the value:color with comma separated mapping",
+          "type": "text",
+          "default": "",
+          "enabled": {
+            "type": ["badge", "colored-select"]
+          }
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "name": "Incidents",
+      "columns": [
+        {
+          "name": "uniquecode",
+          "displayName": "Unique Code"
+        },
+        {
+          "name": "reportedby",
+          "displayName": "Reported By"
+        },
+        {
+          "name": "trade",
+          "displayName": "Trade"
+        },
+        {
+          "name": "affectedperson",
+          "displayName": "Affected Person"
+        },
+        {
+          "name": "incidentstype",
+          "displayName": "Incidents Type"
+        },
+        {
+          "name": "description",
+          "displayName": "Description"
+        },
+        {
+          "name": "severity",
+          "displayName": "Severity"
+        },
+        {
+          "name": "reporteddate",
+          "displayName": "Reported Date & Time"
+        },
+        {
+          "name": "status",
+          "displayName": "Status"
+        }
+      ]
+    }
+  ]
+}

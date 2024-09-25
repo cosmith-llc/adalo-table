@@ -1,0 +1,14 @@
+{
+  "displayName": "Advanced Table",
+  "components": [
+    {
+      "name": "AdvancedTable",
+      "manifest": "./src/components/AdvancedTable/manifest.json"
+    }
+  ],
+  "author": "Cosmith Llc",
+  "description": "Adalo components.",
+  "logo": "./example-logo.png",
+  "demoAppURL": "https://app.adalo.com/apps/71a48b05-d856-4990-8444-0a8956c10a2f/screens",
+  "supportURL": "https://cosmith.io/talk-to-expert"
+}
