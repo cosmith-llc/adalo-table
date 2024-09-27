@@ -1,6 +1,8 @@
 .table {
     min-width: 600px;
-    width:100%;
+    width: calc(100% - 40px); /* Ensures the table does not touch the edges */
+    margin: 0 auto;           /* Centers the table horizontally */
+    padding: 0 20px;          /* Adds padding to the left and right */
     border-collapse: collapse;
     white-space: nowrap;
     position: relative;
