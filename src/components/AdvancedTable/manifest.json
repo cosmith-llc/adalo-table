@@ -53,6 +53,12 @@
       "reference": "records"
     },
     {
+      "name": "listBackgroundColor",
+      "displayName": "List Background Color",
+      "type": "color",
+      "default": "#ffffff"
+    },
+    {
       "name": "showButton",
       "displayName": "Show Button",
       "type": "boolean",

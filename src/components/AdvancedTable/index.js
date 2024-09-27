@@ -13,6 +13,7 @@ const AdvancedTable = (props) => {
 		records,
 		tableTitle,
 		pageSize = 10,
+		listBackgroundColor,
 		showButton,
 		buttonLabel,
 		buttonBackgroundColor,
@@ -44,7 +45,7 @@ const AdvancedTable = (props) => {
 	}, [filteredRows, currentPage, pageSize]);
 
 	return (
-		<div className="content-container">
+		<div className="content-container" style={{ backgroundColor: listBackgroundColor }}>
 			<Header
 				tableTitle={tableTitle}
 				setCurrentSearchWords={setCurrentSearchWords}
