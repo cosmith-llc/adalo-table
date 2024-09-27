@@ -53,12 +53,14 @@
 .table-header {
     padding: 1rem 2rem 1rem 1.7rem;
     display: flex;
-    align-items: center;
+    align-items: center;  /* Ensures vertical alignment of items */
     justify-content: space-between;
+    gap: 10px; /* Adds space between the title, search bar, and button */
 }
 
 .table-header h1 {
     color: var(--font-color-title);
+    margin: 0; /* Removes any margin that could push the title up */
 }
 
 .table-header-search-bar {
@@ -80,8 +82,7 @@
 
 .table-header-search-bar-input {
     width: 100%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     padding-left: 0.75rem;
     border: 0;
@@ -89,6 +90,10 @@
 
 .table-header-search-bar-input:focus {
     outline: 0;
+}
+
+button {
+    height: 100%; /* Ensure the button matches the height of the search bar */
 }
 
 .select {

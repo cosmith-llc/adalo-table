@@ -4,39 +4,42 @@ import React from "react";
 const Header = ({
                     tableTitle,
                     setCurrentSearchWords,
-                    showButton,              // Пропс для активації/деактивації кнопки
-                    buttonLabel,             // Пропс для тексту на кнопці
-                    buttonBackgroundColor,   // Пропс для кольору фону кнопки
-                    buttonTextColor,         // Пропс для кольору тексту кнопки
-                    buttonFontSize,          // Пропс для розміру шрифту на кнопці
-                    buttonFontWeight,        // Пропс для зміни ваги шрифту на кнопці
-                    buttonBorderColor,       // Пропс для кольору рамки кнопки
-                    buttonBorderWidth,       // Пропс для ширини рамки кнопки
-                    buttonBorderRadius,      // Пропс для округлення рамки кнопки
-                    onButtonClick            // Пропс для передачі екшена
+                    showButton,
+                    buttonLabel,
+                    buttonBackgroundColor,
+                    buttonTextColor,
+                    buttonFontSize,
+                    buttonFontWeight,
+                    buttonBorderColor,
+                    buttonBorderWidth,
+                    buttonBorderRadius,
+                    onButtonClick
                 }) => {
     return (
         <>
-            <div className="table-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className="table-header">
+                {/* Title */}
                 <h1 style={tableTitle?.styles}>{tableTitle}</h1>
 
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '10px', flexGrow: 1 }}>
-                    {/* Пошуковий бар */}
+                {/* Search Bar and Button should stay aligned to the right */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexGrow: 1, justifyContent: 'flex-end' }}>
+                    {/* Search Bar */}
                     <SearchBar setCurrentSearchWords={setCurrentSearchWords} />
 
-                    {/* Умовне відображення кнопки */}
+                    {/* Conditional Button */}
                     {showButton && (
                         <button
-                            onClick={onButtonClick} // Додаємо обробник натискання
+                            onClick={onButtonClick}
                             style={{
                                 backgroundColor: buttonBackgroundColor,
                                 color: buttonTextColor,
                                 fontSize: `${buttonFontSize}px`,
-                                fontWeight: buttonFontWeight, // Додаємо зміну ваги шрифту
-                                padding: '5px 10px',
-                                border: `${buttonBorderWidth}px solid ${buttonBorderColor}`, // Додаємо рамку
-                                borderRadius: `${buttonBorderRadius}px`, // Додаємо можливість налаштування радіуса
+                                fontWeight: buttonFontWeight,
+                                padding: '5px 20px',
+                                border: `${buttonBorderWidth}px solid ${buttonBorderColor}`,
+                                borderRadius: `${buttonBorderRadius}px`,
                                 cursor: 'pointer',
+                                height: '100%' // Match search bar height
                             }}
                         >
                             {buttonLabel}
