@@ -1,12 +1,11 @@
 .table {
     min-width: 600px;
-    width: calc(100% - 40px); /* Ensures the table does not touch the edges */
-    margin: 0 auto;           /* Centers the table horizontally */
-    padding: 0 20px;          /* Adds padding to the left and right */
+    width: calc(100% - 40px); /* Забезпечує відступи з боків */
+    margin: 0 auto;
+    padding: 0 20px;
     border-collapse: collapse;
     white-space: nowrap;
-    position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Зазор для нижньої частини таблиці */
 }
 
 .table tr {
