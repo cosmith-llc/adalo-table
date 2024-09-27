@@ -33,7 +33,7 @@ const Header = ({
                                 color: buttonTextColor,
                                 fontSize: `${buttonFontSize}px`,
                                 fontWeight: buttonFontWeight, // Додаємо зміну ваги шрифту
-                                padding: '10px 20px',
+                                padding: '5px 10px',
                                 border: `${buttonBorderWidth}px solid ${buttonBorderColor}`, // Додаємо рамку
                                 borderRadius: `${buttonBorderRadius}px`, // Додаємо можливість налаштування радіуса
                                 cursor: 'pointer',
