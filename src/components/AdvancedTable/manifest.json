@@ -51,6 +51,97 @@
       "type": "action",
       "role": "listItem",
       "reference": "records"
+    },
+    {
+      "name": "showButton",
+      "displayName": "Show Button",
+      "type": "boolean",
+      "description": "Toggle to show or hide the button next to the search bar.",
+      "defaultValue": false
+    },
+    {
+      "name": "buttonLabel",
+      "displayName": "Button Label",
+      "type": "text",
+      "description": "Label for the button",
+      "defaultValue": "Add Item",
+      "conditions": {
+        "showButton": true
+      }
+    },
+    {
+      "name": "buttonBackgroundColor",
+      "displayName": "Button Background Color",
+      "type": "color",
+      "defaultValue": "#007bff",
+      "description": "Background color of the button",
+      "conditions": {
+        "showButton": true
+      }
+    },
+    {
+      "name": "buttonTextColor",
+      "displayName": "Button Text Color",
+      "type": "color",
+      "defaultValue": "#ffffff",
+      "description": "Text color of the button",
+      "conditions": {
+        "showButton": true
+      }
+    },
+    {
+      "name": "buttonFontSize",
+      "type": "number",
+      "displayName": "Button Font Size",
+      "description": "Font size of the button text",
+      "default": 16,
+      "control": {
+        "type": "slider",
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "name": "buttonFontWeight",
+      "displayName": "Button Font Weight",
+      "type": "number",
+      "control": {
+        "type": "menu",
+        "options": [
+          { "label": "Light", "value": 300 },
+          { "label": "Normal", "value": 400 },
+          { "label": "Medium", "value": 500 },
+          { "label": "Semi Bold", "value": 600 },
+          { "label": "Bold", "value": 700 },
+          { "label": "Extra Bold", "value": 800 },
+          { "label": "Black", "value": 900 }
+        ]
+      },
+      "default": 400
+    },
+    {
+      "name": "buttonBorderColor",
+      "type": "color",
+      "displayName": "Button Border Color",
+      "description": "Choose the color for the button border"
+    },
+    {
+      "name": "buttonBorderWidth",
+      "type": "number",
+      "displayName": "Button Border Width",
+      "description": "Specify the width of the button border"
+    },
+    {
+      "name": "buttonBorderRadius",
+      "type": "number",
+      "displayName": "Button Border Radius",
+      "description": "Specify the border radius of the button"
+    },
+    {
+      "name": "onButtonClick",
+      "type": "action",
+      "displayName": "Button Click Action",
+      "description": "Action to trigger when the button is clicked"
     }
   ],
   "childComponents": [

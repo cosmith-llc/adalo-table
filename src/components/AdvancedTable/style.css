@@ -53,12 +53,12 @@
 .table-header {
     padding: 1rem 2rem 1rem 1.7rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 
 .table-header h1 {
-    color: var(--font-color-title)
+    color: var(--font-color-title);
 }
 
 .table-header-search-bar {

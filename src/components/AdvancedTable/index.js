@@ -9,7 +9,21 @@ import "./styles/pagination.css";
 import "./styles/table.css";
 
 const AdvancedTable = (props) => {
-	const { records, tableTitle, pageSize = 10 } = props;
+	const {
+		records,
+		tableTitle,
+		pageSize = 10,
+		showButton,
+		buttonLabel,
+		buttonBackgroundColor,
+		buttonTextColor,
+		buttonFontSize,
+		buttonFontWeight,
+		buttonBorderColor,
+		buttonBorderWidth,
+		buttonBorderRadius,
+		onButtonClick
+	} = props;
 
 	const allData = Array.isArray(records) ? records : [];
 
@@ -21,7 +35,6 @@ const AdvancedTable = (props) => {
 	}, [currentSearchWords]);
 
 	const sortedColumns = useSortedColumns(allData);
-
 	const filteredRows = useFilteredRows(allData, currentSearchWords);
 
 	const pageData = useMemo(() => {
@@ -35,6 +48,16 @@ const AdvancedTable = (props) => {
 			<Header
 				tableTitle={tableTitle}
 				setCurrentSearchWords={setCurrentSearchWords}
+				showButton={showButton} // Передаємо пропс для відображення кнопки
+				buttonLabel={buttonLabel} // Передаємо текст кнопки
+				buttonBackgroundColor={buttonBackgroundColor} // Передаємо колір фону кнопки
+				buttonTextColor={buttonTextColor} // Передаємо колір тексту кнопки
+				buttonFontSize={buttonFontSize}
+				buttonFontWeight={buttonFontWeight}
+				buttonBorderColor={buttonBorderColor}   // Передаємо колір рамки
+				buttonBorderWidth={buttonBorderWidth}   // Передаємо ширину рамки
+				buttonBorderRadius={buttonBorderRadius}// Передаємо розмір шрифту кнопки
+				onButtonClick={onButtonClick}  // Передаємо дію для кнопки
 			/>
 			<div className="table-responsive-container">
 				<TableBody sortedColumns={sortedColumns} filteredRows={pageData} />
