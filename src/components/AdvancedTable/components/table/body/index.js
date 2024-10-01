@@ -8,20 +8,22 @@ export default function TableBody({ sortedColumns, filteredRows }) {
             {sortedColumns?.length === 0 ? (
                 <div className="table-no-data">Add some data data</div>
             ) : (
-                <table className="table">
-                    <thead>
-                    <tr>
-                        {sortedColumns.map((column) => (
-                            <th key={column.key} style={column?.styles}>{column.title}</th>
-                        ))}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {filteredRows.map((row, index) => (
-                        <Row key={index} row={row} columns={sortedColumns} />
-                    ))}
-                    </tbody>
-                </table>
+                <div className="table-container">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                {sortedColumns.map((column) => (
+                                    <th key={column.key} style={column?.styles}>{column.title}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {filteredRows.map((row, index) => (
+                                <Row key={index} row={row} columns={sortedColumns} />
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             )}
         </ScrollContainer>
     );

@@ -1,126 +1,92 @@
+.table-container {
+    width: 100%; /* Full width container */
+    padding: 0 20px; /* Margins for left and right */
+    box-sizing: border-box; /* Make padding part of the total width */
+}
+
 .table {
-    min-width: 600px;
-    width: calc(100% - 40px); /* Забезпечує відступи з боків */
-    margin: 0 auto;
-    padding: 0 20px;
+    width: auto; /* Table width adjusts to the content */
+    margin: 0; /* Keep the table left-aligned */
     border-collapse: collapse;
     white-space: nowrap;
-    margin-bottom: 50px; /* Зазор для нижньої частини таблиці */
+    table-layout: auto; /* Allow the table to adjust based on content */
 }
 
-.table tr {
-    width: 100%;
-}
-
-.table thead {
-    width: 100%;
-}
-
-.table tbody {
-    width: 100%;
-    flex: 1;
-}
-
-.th {
-    text-align: left!important;
-}
-
+/* Only the border under the header row, spanning full width */
 .table thead th {
-    position: sticky;
-    top: 0;
-    background-color: transparent!Important;
-    border-bottom: 2px solid #efeff0;
-    padding: 10px;
     text-align: left !important;
+    padding: 10px;
     color: var(--font-color-title);
-    z-index: 1;
+    /*border-bottom: 2px solid #efeff0; !* This is the header border *!*/
 }
 
-.table td {
-    border-top: 0 solid #f9fafb;
+.table-container::before {
+    content: "";
+    display: block;
+    width: calc(100% - 40px); /* Ensure it spans the full container width */
+    height: 2px;
+    background-color: #efeff0; /* Match the border color */
+    position: absolute;
+    top: 104px; /* Adjust to the height of the header */
+}
+
+.table td,
+.table th {
     padding: 10px;
-    text-align: left;
+    text-align: left !important; /* Left-align both header and cells */
     color: #9E9E9E;
     font-weight: 400;
     font-size: 15px;
-    background-color: transparent!Important;
+    border-bottom: none; /* Remove any additional row borders */
 }
 
-.table td:not(:first-child, :last-child),
-.table th:not(:first-child, :last-child) {
-    padding-inline: 30px;
-}
-
-.table td:first-child,
-.table th:first-child {
-    padding-left: 30px;
+/* Set fixed widths for the first and last columns */
+.table th:first-child,
+.table td:first-child {
+    width: 200px;
 }
 
 .table th:last-child,
 .table td:last-child {
-    padding-right: 30px;
+    width: 150px;
 }
 
+/* Responsive layout for smaller screens */
+@media only screen and (max-width: 500px) {
+    .table th,
+    .table td {
+        display: block;
+        width: 100%; /* Make each column take full width on small screens */
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .table thead {
+        display: none; /* Hide the table header on smaller screens */
+    }
+
+    .table tbody td::before {
+        content: attr(data-title); /* Show the column title inside each cell */
+        font-weight: bold;
+        display: block;
+    }
+}
+
+/* Styling for select dropdowns */
 .table .select {
     width: 150px;
     border: 0 solid #f9fafb;
     border-radius: 1px;
 }
 
-/*.select css-b62m3t-container{*/
-/*    cursor: pointer!important;*/
-/*}*/
-
 .select {
     cursor: pointer !important;
 }
 
-.td-responsive {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-@media only screen and (max-width: 500px) {
-    .table {
-        min-width: 0;
-        white-space: normal;
-    }
-
-    .td-responsive-element {
-        text-overflow: ellipsis;
-        width: 50% !important;
-        overflow: hidden;
-    }
-
-    .td-responsive-select {
-        overflow: visible;
-    }
-    .table td,
-    .table th {
-        padding-inline: 20px !important;
-    }
-
-    .table tbody {
-        display: flex !important;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .table tr {
-        width: 100%;
-        display: flex !important;
-        flex-direction: column;
-        border-bottom: 2px solid var(--gray-border);
-    }
-
-    .table thead {
-        display: none;
-    }
-
-}
-
+/* Badges */
 .badge {
     display: flex;
     justify-content: flex-end;
@@ -132,26 +98,28 @@
     font-weight: normal;
 }
 
+/* Example of different badge classes */
 .badge.low {
     background-color: var(--green-background);
-    color: var(--green)
+    color: var(--green);
 }
 
 .badge.critical {
     background-color: var(--red-background);
-    color: var(--red)
+    color: var(--red);
 }
 
 .badge.high {
     background-color: var(--orange-background);
-    color: var(--orange)
+    color: var(--orange);
 }
 
 .badge.moderate {
     background-color: rgb(252, 252, 255);
-    color: rgb(194, 213, 242)
+    color: rgb(194, 213, 242);
 }
 
+/* Tooltip */
 .tooltip {
     background-color: #eaecf3;
     border-radius: 8px;
@@ -163,7 +131,7 @@
 }
 
 .description button {
-    background-color: transparent!Important;
+    background-color: transparent !important;
     padding: 0;
     border: 0;
     outline: 0;
@@ -176,9 +144,8 @@
     font-weight: 500;
     font-size: 16px;
     width: 100%;
-    cursor:pointer;
+    cursor: pointer;
 }
-
 
 .table-no-data {
     height: 100%;
