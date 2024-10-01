@@ -16,7 +16,7 @@
 .content-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Розтягується на всю висоту вікна браузера */
+    height: 85vh; /* Розтягується на всю висоту вікна браузера */
     width: 100%;
 }
 
@@ -30,6 +30,7 @@
 .table-responsive-container {
     flex-grow: 1; /* Заповнює простір між хедером і нижньою частиною сторінки */
     overflow-y: auto; /* Якщо вміст перевищує розмір, з'являється скролінг */
+    /*height: 100%;*/
 }
 
 
