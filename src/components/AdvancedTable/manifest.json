@@ -187,6 +187,14 @@
           "default": true
         },
         {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -289,6 +297,13 @@
           "default": true
         },
         {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+        {
           "name": "order",
           "displayName": "Column Order",
           "type": "number",
@@ -383,6 +398,13 @@
           "type": "boolean",
           "helpText": "Make this column visible/invisible",
           "default": true
+        },
+        {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
         },
         {
           "name": "order",
@@ -481,6 +503,14 @@
           "default": true
         },
         {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
+        {
           "name": "order",
           "displayName": "Column Order",
           "type": "number",
@@ -576,6 +606,14 @@
           "helpText": "Make this column visible/invisible",
           "default": true
         },
+        {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
         {
           "name": "order",
           "displayName": "Column Order",
@@ -673,6 +711,14 @@
           "default": true
         },
         {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
+        {
           "name": "order",
           "displayName": "Column Order",
           "type": "number",
@@ -768,6 +814,14 @@
           "helpText": "Make this column visible/invisible",
           "default": true
         },
+        {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
         {
           "name": "order",
           "displayName": "Column Order",
@@ -879,6 +933,14 @@
           "default": true
         },
         {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
+        {
           "name": "order",
           "displayName": "Column Order",
           "type": "number",
@@ -974,6 +1036,14 @@
           "helpText": "Make this column visible/invisible",
           "default": true
         },
+        {
+          "name": "expandToFillSpace",
+          "displayName": "Expand to Fill Space",
+          "type": "boolean",
+          "helpText": "If true, this column will take up all the available space.",
+          "default": false
+        },
+
         {
           "name": "order",
           "displayName": "Column Order",

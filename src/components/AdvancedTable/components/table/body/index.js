@@ -11,16 +11,25 @@ export default function TableBody({ sortedColumns, filteredRows }) {
                 <div className="table-container">
                     <table className="table">
                         <thead>
-                            <tr>
-                                {sortedColumns.map((column) => (
-                                    <th key={column.key} style={column?.styles}>{column.title}</th>
-                                ))}
-                            </tr>
+                        <tr>
+                            {sortedColumns.map((column) => (
+                                <th
+                                    key={column.key}
+                                    style={{
+                                        ...column.styles,
+                                        width: column.expandToFillSpace ? '100%' : 'auto',
+                                        textAlign: column.expandToFillSpace ? 'right' : 'left'
+                                    }}
+                                >
+                                    {column.title}
+                                </th>
+                            ))}
+                        </tr>
                         </thead>
                         <tbody>
-                            {filteredRows.map((row, index) => (
-                                <Row key={index} row={row} columns={sortedColumns} />
-                            ))}
+                        {filteredRows.map((row, index) => (
+                            <Row key={index} row={row} columns={sortedColumns} />
+                        ))}
                         </tbody>
                     </table>
                 </div>
@@ -28,3 +37,4 @@ export default function TableBody({ sortedColumns, filteredRows }) {
         </ScrollContainer>
     );
 }
+

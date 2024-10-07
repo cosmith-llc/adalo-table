@@ -14,7 +14,9 @@ function useSortedCols(records) {
                     type: columnRaw?.type || "text",
                     styles: columnRaw?.styles?.title,
                     actionable: !!columnRaw?.actionable,
+                    expandToFillSpace: columnRaw?.expandToFillSpace || false, // Додаємо поле expandToFillSpace
                 };
+
                 if (["badge", "colored-select"].includes(column.type)) {
                     const choices = (columnRaw.valuesToColors || "")
                         .split(",")

@@ -7,9 +7,11 @@
 .table {
     width: auto; /* Table width adjusts to the content */
     margin: 0; /* Keep the table left-aligned */
-    border-collapse: collapse;
+    /*border-collapse: collapse;*/
+    border-collapse: separate;
     white-space: nowrap;
     table-layout: auto; /* Allow the table to adjust based on content */
+    border-spacing: 15px 0;
 }
 
 /* Only the border under the header row, spanning full width */
@@ -39,6 +41,19 @@
     font-size: 15px;
     border-bottom: none; /* Remove any additional row borders */
 }
+
+/* Add this style for expanded columns */
+.table th.expand-column {
+    width: 100%;
+    text-align: right; /* Align text to the right when expanded */
+}
+
+/* Default column style */
+.table th.default-column {
+    width: auto;
+    text-align: left;
+}
+
 
 /* Set fixed widths for the first and last columns */
 .table th:first-child,
