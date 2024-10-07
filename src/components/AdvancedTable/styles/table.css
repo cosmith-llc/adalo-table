@@ -2,6 +2,7 @@
     width: 100%; /* Full width container */
     padding: 0 20px; /* Margins for left and right */
     box-sizing: border-box; /* Make padding part of the total width */
+    border-bottom: none;
 }
 
 .table {
@@ -14,11 +15,18 @@
     border-spacing: 15px 0;
 }
 
+.table thead {
+    background-color: transparent !important; /* Ensure the row background is transparent */
+    border-bottom: none !important;
+}
+
 /* Only the border under the header row, spanning full width */
 .table thead th {
     text-align: left !important;
     padding: 10px;
     color: var(--font-color-title);
+    background-color: transparent !important;
+    border-bottom: none !important;
     /*border-bottom: 2px solid #efeff0; !* This is the header border *!*/
 }
 
@@ -40,6 +48,7 @@
     font-weight: 400;
     font-size: 15px;
     border-bottom: none; /* Remove any additional row borders */
+    background-color: transparent !important;
 }
 
 /* Add this style for expanded columns */
