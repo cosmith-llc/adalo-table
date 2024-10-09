@@ -11,6 +11,14 @@
     --orange-background: #f9f7f3;
     --red: #c59295;
     --red-background: #f7f5f8;
+
+    --button-background-color: #007bff;
+    --button-text-color: #ffffff;
+    --button-font-size: 16px;
+    --button-font-weight: 400;
+    --button-border-width: 1px;
+    --button-border-color: #007bff;
+    --button-border-radius: 5px;
 }
 
 .content-container {
@@ -53,7 +61,7 @@
 .table-header {
     padding: 1rem 2rem 1rem 1.7rem;
     display: flex;
-    align-items: center;  /* Ensures vertical alignment of items */
+    align-items: stretch;  /* Ensures vertical alignment of items */
     justify-content: space-between;
     gap: 10px; /* Adds space between the title, search bar, and button */
 }
@@ -64,8 +72,6 @@
 }
 
 .table-header-search-bar {
-    width: 20rem;
-    max-width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,28 +79,40 @@
     border: 1px solid var(--gray-border);
     border-radius: 0.25rem;
     padding-right: 0.5rem;
+    height: 100%;
 }
+
+
+.table-header-search-bar-input {
+    width: 100%;
+    padding: 0.35rem;
+    border-radius: 0.25rem;
+    padding-left: 0.75rem;
+    border: 0;
+    height: 100%;
+}
+
 
 .table-header-search-bar svg {
     color: var(--font-color-title);
     font-size: 20px;
 }
 
-.table-header-search-bar-input {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    padding-left: 0.75rem;
-    border: 0;
-}
-
 .table-header-search-bar-input:focus {
     outline: 0;
 }
 
-button {
-    height: 100%; /* Ensure the button matches the height of the search bar */
+.custom-button {
+    padding: 5px 18px;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
 }
+
 
 .select {
     border: 0 !important;

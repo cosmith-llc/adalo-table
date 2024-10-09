@@ -49,16 +49,16 @@ const AdvancedTable = (props) => {
 			<Header
 				tableTitle={tableTitle}
 				setCurrentSearchWords={setCurrentSearchWords}
-				showButton={showButton} // Передаємо пропс для відображення кнопки
-				buttonLabel={buttonLabel} // Передаємо текст кнопки
-				buttonBackgroundColor={buttonBackgroundColor} // Передаємо колір фону кнопки
-				buttonTextColor={buttonTextColor} // Передаємо колір тексту кнопки
+				showButton={showButton}
+				buttonLabel={buttonLabel}
+				buttonBackgroundColor={buttonBackgroundColor}
+				buttonTextColor={buttonTextColor}
 				buttonFontSize={buttonFontSize}
 				buttonFontWeight={buttonFontWeight}
-				buttonBorderColor={buttonBorderColor}   // Передаємо колір рамки
-				buttonBorderWidth={buttonBorderWidth}   // Передаємо ширину рамки
-				buttonBorderRadius={buttonBorderRadius}// Передаємо розмір шрифту кнопки
-				onButtonClick={onButtonClick}  // Передаємо дію для кнопки
+				buttonBorderColor={buttonBorderColor}
+				buttonBorderWidth={buttonBorderWidth}
+				buttonBorderRadius={buttonBorderRadius}
+				onButtonClick={onButtonClick}
 			/>
 			<div className="table-responsive-container">
 				<TableBody sortedColumns={sortedColumns} filteredRows={pageData} />
