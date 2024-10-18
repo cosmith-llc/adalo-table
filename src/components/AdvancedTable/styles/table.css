@@ -37,7 +37,7 @@
     height: 2px;
     background-color: #efeff0; /* Match the border color */
     position: absolute;
-    top: 104px; /* Adjust to the height of the header */
+    top: 105px; /* Adjust to the height of the header */
 }
 
 .table td,
@@ -67,7 +67,7 @@
 /* Set fixed widths for the first and last columns */
 .table th:first-child,
 .table td:first-child {
-    width: 200px;
+    width: 150px;
     padding-left: 0;
 }
 
