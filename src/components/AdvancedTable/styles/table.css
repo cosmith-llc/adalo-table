@@ -8,7 +8,7 @@
 .table {
     width: auto; /* Table width adjusts to the content */
     margin: 0; /* Keep the table left-aligned */
-    /*border-collapse: collapse;*/
+    /* border-collapse: collapse;*/
     border-collapse: separate;
     white-space: nowrap;
     table-layout: auto; /* Allow the table to adjust based on content */
@@ -35,9 +35,13 @@
     display: block;
     width: calc(100% - 40px); /* Ensure it spans the full container width */
     height: 2px;
-    background-color: #efeff0; /* Match the border color */
+    background-color: #366AD0; /* Match the border color */
     position: absolute;
-    top: 105px; /* Adjust to the height of the header */
+    top: 100px; /* Adjust to the height of the header */
+}
+
+.table-container.editor::before { 
+    top: 120px;
 }
 
 .table td,
@@ -172,10 +176,38 @@
     cursor: pointer;
 }
 
+.subheading {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--font-color-text);
+    width: 100%;
+    cursor: pointer;
+}
+
+.tooltip-image.description button {
+    font-size: 14px;
+}
+
+.tooltip-image .subheading {
+    font-size: 12px;
+}
+
 .table-no-data {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cell-img {
+    height: 64px;
+    width: 64px;
+    vertical-align: middle;
+    padding: 1px;
+}
+.cell-image-content {
+    display: inline-block;
+    padding: 5px;
+    vertical-align: middle;
 }

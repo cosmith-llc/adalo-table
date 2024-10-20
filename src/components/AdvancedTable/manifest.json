@@ -152,6 +152,82 @@
   ],
   "childComponents": [
     {
+      "name": "rowProperties",
+      "displayName": "Row properties",
+      "props": [
+        {
+          "name": "rowBackgroundColor",
+          "type": "color",
+          "displayName": "Row Background Color",
+          "description": "Choose the color for the row Background",
+          "default": "#ffffff"
+        },
+        {
+          "name": "rowBottonMargin",
+          "type": "number",
+          "displayName": "Row Bottom Margin",
+          "description": "Specify the margin between rows",
+          "default": 0,
+          "control": {
+            "type": "slider",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "enableBorder",
+          "type": "boolean",
+          "displayName": "Enable Border",
+          "default": true
+        },
+        {
+          "name": "rowBorderColor",
+          "type": "color",
+          "displayName": "Row Border Color",
+          "description": "Choose the color for the row border",
+          "default":"#F5F5F5",
+          "enabled": {
+            "enableBorder": true
+          }
+        },
+        {
+          "name": "rowBorderWidth",
+          "type": "number",
+          "displayName": "Row Border Width",
+          "description": "Specify the width of the row border",
+          "default": 1,
+          "enabled": {
+            "enableBorder": true
+          },
+          "control": {
+            "type": "slider",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "overridePadding",
+          "type": "boolean",
+          "displayName": "override Padding",
+          "default": false
+        },{
+          "name": "cellPadding",
+          "type": "number",
+          "displayName": "Row Border Width",
+          "description": "Specify the width of the row border",
+          "default": 0,
+          "enabled": {
+            "overridePadding": true
+          },
+          "control": {
+            "type": "slider",
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
       "name": "uiquecode",
       "displayName": "Unique Code Column",
       "role": "listItem",
@@ -178,6 +254,23 @@
           "role": "listItem",
           "reference": "records",
           "default": ""
+        },
+        {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
         },
         {
           "name": "visible",
@@ -220,6 +313,10 @@
                 "value": "text"
               },
               {
+                "label": "Image Text",
+                "value": "image-text"
+              },
+              {
                 "label": "Badge",
                 "value": "badge"
               },
@@ -228,6 +325,16 @@
                 "value": "colored-select"
               }
             ]
+          }
+        },
+        {
+          "name": "headerImage",
+          "type": "image",
+          "displayName": "Image",
+          "role": "listItem",
+          "reference": "records",
+          "enabled": {
+            "type": "image-text"
           }
         },
         {
@@ -284,6 +391,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -321,6 +445,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -387,6 +515,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -424,6 +569,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -490,6 +639,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -528,6 +694,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -594,6 +764,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -632,6 +819,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -698,6 +889,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -736,6 +944,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -808,6 +1020,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "visible",
           "displayName": "Visible",
           "type": "boolean",
@@ -840,6 +1069,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -920,6 +1153,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -958,6 +1208,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",
@@ -1024,6 +1278,23 @@
           "default": ""
         },
         {
+          "name": "showSubheading",
+          "displayName": "Show Subheading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "subHeading",
+          "displayName": "Subheading Value",
+          "type": "text",
+          "role": "listItem",
+          "reference": "records",
+          "default": "",
+          "enabled": {
+            "showSubheading": true
+          }
+        },
+        {
           "name": "actionable",
           "displayName": "Activate/Deactivate action",
           "type": "boolean",
@@ -1062,6 +1333,10 @@
               {
                 "label": "Text",
                 "value": "text"
+              },
+              {
+                "label": "Image Text",
+                "value": "image-text"
               },
               {
                 "label": "Badge",

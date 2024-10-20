@@ -2,13 +2,14 @@ import Popup from "reactjs-popup";
 import CellContent from "./CellContent";
 import React from "react";
 
-const Tooltip = ({ width, column, cell, row }) => (
+const Tooltip = ({ width, column, cell, cellObj, row, borderStyle}) => (
     <td
         onClick={() => {
             if (!!column.actionable && row?.onPress) {
                 row.onPress();
             }
         }}
+        style = { { ...borderStyle } }
     >
         <CellContent
             width={width}
@@ -23,6 +24,7 @@ const Tooltip = ({ width, column, cell, row }) => (
                     >
                         <span className="tooltip">{cell}</span>
                     </Popup>
+                    { cellObj.showSubheading ? <div className="subheading">{cellObj.subHeading}</div> : <></> }
                 </div>
             }
         />

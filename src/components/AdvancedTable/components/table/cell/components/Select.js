@@ -12,6 +12,7 @@ const SelectCell = ({
                         onChange,
                         rowId,
                         row,
+                        borderStyle
                     }) => {
     let options = choices.map(({ type }) => {
         return { label: type, value: type };
@@ -35,6 +36,7 @@ const SelectCell = ({
                     row.onPress();
                 }
             }}
+            style = { { ...borderStyle } }
         >
             <CellContent
                 select

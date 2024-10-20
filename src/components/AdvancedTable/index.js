@@ -24,7 +24,9 @@ const AdvancedTable = (props) => {
 		buttonBorderColor,
 		buttonBorderWidth,
 		buttonBorderRadius,
-		onButtonClick
+		rowProperties,
+		onButtonClick,
+		editor
 	} = props;
 
 	const allData = Array.isArray(records) ? records : [];
@@ -72,7 +74,7 @@ const AdvancedTable = (props) => {
 				{loading ? (
 					<Spinner /> // Show spinner while loading
 				) : (
-					<TableBody sortedColumns={sortedColumns} filteredRows={pageData} />
+					<TableBody sortedColumns={sortedColumns} filteredRows={pageData} rowProperties={rowProperties} editor={ editor } />
 				)}
 				<Pagination
 					currentPage={currentPage}

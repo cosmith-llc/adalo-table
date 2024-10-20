@@ -1,13 +1,14 @@
 import CellContent from "./CellContent";
 import React from "react";
 
-const Badge = ({ mainColor, cell, width, column, row }) => (
+const Badge = ({ mainColor, cell, width, column, row, borderStyle }) => (
     <td
         onClick={() => {
             if (!!column?.actionable && row?.onPress) {
                 row.onPress();
             }
         }}
+        style ={ { ...borderStyle } }
     >
         <CellContent
             width={width}
