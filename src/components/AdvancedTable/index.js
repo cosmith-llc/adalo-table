@@ -9,6 +9,7 @@ import "./style.css";
 import "./styles/pagination.css";
 import "./styles/table.css";
 
+
 const AdvancedTable = (props) => {
 	const {
 		records,
@@ -30,6 +31,7 @@ const AdvancedTable = (props) => {
 	} = props;
 
 	const allData = Array.isArray(records) ? records : [];
+
 
 	// New loading state
 	const [loading, setLoading] = useState(true);
@@ -86,5 +88,5 @@ const AdvancedTable = (props) => {
 		</div>
 	);
 };
-
+/* */
 export default AdvancedTable;

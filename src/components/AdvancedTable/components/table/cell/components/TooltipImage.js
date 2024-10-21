@@ -16,7 +16,7 @@ const Tooltip = ({ width, column, cell, cellObj, row, borderStyle }) => (
             column={column}
             content={
                 <div className="description tooltip-image">
-                    <img  className="cell-img" src={cellObj.headerImage.uri} ></img>
+                    <img  className="cell-img" src={ cellObj.headerImage ? cellObj.headerImage.uri : 'https://via.placeholder.com/48'} ></img>
                     <span className="cell-image-content">
                         <Popup
                             on={["hover", "focus"]}

@@ -1,5 +1,5 @@
 {
-  "name": "advancedtablev4",
+  "name": "@cosmith/adalo-table",
   "description": "Advanced table from cosmith llc",
   "version": "5.0.19",
   "main": "index.js",

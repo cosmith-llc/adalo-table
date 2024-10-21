@@ -9,7 +9,7 @@ export default function TableBody({ sortedColumns, filteredRows, rowProperties, 
                 <div className="table-no-data">Add some data data</div>
             ) : (
                 <div className= { `table-container + ${editor ? " editor": ""}` }>
-                    <table className="table" style={ { borderSpacing:`0 ${rowProperties.rowBottonMargin}px` }}>
+                    <table className="table" style={ { borderSpacing:`0px ${rowProperties.rowBottonMargin}px` }}>
                         <thead>
                         <tr>
                             {sortedColumns.map((column) => (

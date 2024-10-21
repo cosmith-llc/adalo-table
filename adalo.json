@@ -1,14 +1,15 @@
 {
-  "displayName": "Advanced Table",
+  "displayName": "Advanced TableV4",
+  "version": "5.0.13",
+  "author": "Konstantinos Pap",
+  "description": "No Avocados",
+  "logo": "./logo.png",
+  "demoAppURL": "https://previewer.adalo.com/4e4ee219-8af8-41c3-8f75-e608dc32b3e1?sessionToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2NjgxMywiZW1haWwiOiJjeWJlcmdvZ29hcHBzQGdtYWlsLmNvbSIsImRldmVsb3BlciI6dHJ1ZSwiaWF0IjoxNzA4NzgxOTE0LCJleHAiOjE3MTEzNzM5MTR9.DNKq0Wtwb5PNES7Min_2tEqgCANTmYpSnK5VnNozeimFqUjAvKUa5Bl2A2hREWrZLGZPBx7j2h9Tc-u_L1y74cLfMtPNC0zbpPiRTDi-XCdDJFY3r9Y1jWULEvupPf_OdZYSxNi5PSgqQRY0oBZoLcdJt5eqrpzSuTxuzJGcgcNuU4gpAn0S-XazNkAr9crMEBfkoFNlg4rBiChSm9YjXtxF6TU1Z5ck_hVBYGMeafPLDad8gm-S7v_MwAywaBflCFU8y6LiTkVIdtBuoThWkpFJfeL7UFhRMTDzCWtueU1pMlbi__FUtO1T3dPE3GJvRqqnKsk0m3s3hTCVPA6ABQ&_gl=1%2A1em8mft%2A_ga%2AMTEyMTQ1MjcyMS4xNzA4NTA2MTc5%2A_ga_SWT45DV35L%2AMTcwODc3NzEyNS45LjEuMTcwODc4MjA0NC41Ni4wLjA.&target=818468a1bfad492599706dafa106d579&params=%7B%7D",
+  "supportURL": "https://cybergogo.co.uk",
   "components": [
     {
-      "name": "AdvancedTable",
+      "name": "AdvancedTableV4",
       "manifest": "./src/components/AdvancedTable/manifest.json"
     }
-  ],
-  "author": "Cosmith Llc",
-  "description": "Adalo components.",
-  "logo": "./example-logo.png",
-  "demoAppURL": "https://app.adalo.com/apps/71a48b05-d856-4990-8444-0a8956c10a2f/screens",
-  "supportURL": "https://cosmith.io/talk-to-expert"
+  ]
 }

@@ -1,12 +1,10 @@
 {
-  "name": "AdvancedTable",
-  "displayName": "Advanced Table",
-  "icon": "./example-thumbnail.png",
+  "displayName": "Advanced TableV4",
+  "icon": "./thumbnail.png",
   "defaultWidth": 375,
   "defaultHeight": 700,
-  "components": "./index.js",
-  "description": "A customizable list component",
-  "version": "1.0.0",
+  "description": " displaying data",
+  "version": "5.0.13",
   "resizeY": true,
   "snappingRules": {
     "snap": true,
@@ -210,11 +208,45 @@
           "type": "boolean",
           "displayName": "override Padding",
           "default": false
-        },{
+        },
+        {
           "name": "cellPadding",
           "type": "number",
-          "displayName": "Row Border Width",
-          "description": "Specify the width of the row border",
+          "displayName": "Cell horizontal padding",
+          "description": "Specify the Cell horizontal padding",
+          "default": 0,
+          "enabled": {
+            "overridePadding": true
+          },
+          "control": {
+            "type": "slider",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "skipLeftCellPadding",
+          "type": "boolean",
+          "displayName": "Do not apply left padding to first cell",
+          "default": true,
+          "enabled": {
+            "overridePadding": true
+          }
+        },
+        {
+          "name": "skipRightCellPadding",
+          "type": "boolean",
+          "displayName": "Do not apply right padding to last cell",
+          "default": true,
+          "enabled": {
+            "overridePadding": true
+          }
+        },
+        {
+          "name": "cellVerticalPadding",
+          "type": "number",
+          "displayName": "Cell vertical padding",
+          "description": "Specify the Cell vartical padding",
           "default": 0,
           "enabled": {
             "overridePadding": true

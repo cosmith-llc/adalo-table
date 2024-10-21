@@ -1,2 +1,2 @@
 // Named export must match component name in package.json
-export { default as AdvancedTable } from './src/components/AdvancedTable'
+export { default as AdvancedTableV4 } from './src/components/AdvancedTable'
