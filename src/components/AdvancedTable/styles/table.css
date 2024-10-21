@@ -17,7 +17,7 @@
 
 .table thead {
     background-color: transparent !important; /* Ensure the row background is transparent */
-    border-bottom: none !important;
+    /* border-bottom: none !important;*/
 }
 
 /* Only the border under the header row, spanning full width */
@@ -26,18 +26,27 @@
     padding: 10px;
     color: var(--font-color-title);
     background-color: transparent !important;
-    border-bottom: none !important;
-    /*border-bottom: 2px solid #efeff0; !* This is the header border *!*/
+    
+
 }
 
-.table-container::before {
+.fit-to-space .table thead th { 
+    /*border-bottom: none !important;*/
+    border-bottom: 2px solid #366AD0; /* This is the header border */
+}
+
+.adject-to-content .table thead th { 
+    border-bottom: none !important;
+}
+
+.adject-to-content.table-container::before {
     content: "";
     display: block;
     width: calc(100% - 40px); /* Ensure it spans the full container width */
     height: 2px;
     background-color: #366AD0; /* Match the border color */
     position: absolute;
-    top: 100px; /* Adjust to the height of the header */
+    top: 110px; /* Adjust to the height of the header */
 }
 
 .table-container.editor::before { 
@@ -68,8 +77,8 @@
 }
 
 
+/*.table th:first-child,*/
 /* Set fixed widths for the first and last columns */
-.table th:first-child,
 .table td:first-child {
     width: 150px;
     padding-left: 0;
@@ -201,10 +210,11 @@
 }
 
 .cell-img {
-    height: 64px;
-    width: 64px;
+    height: 40px;
+    width: 40px;
     vertical-align: middle;
-    padding: 1px;
+    margin: 4px;
+    border-radius: 4px;
 }
 .cell-image-content {
     display: inline-block;

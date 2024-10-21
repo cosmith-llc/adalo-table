@@ -27,6 +27,7 @@ const AdvancedTable = (props) => {
 		buttonBorderRadius,
 		rowProperties,
 		onButtonClick,
+		fitTableToSpace,
 		editor
 	} = props;
 
@@ -76,7 +77,7 @@ const AdvancedTable = (props) => {
 				{loading ? (
 					<Spinner /> // Show spinner while loading
 				) : (
-					<TableBody sortedColumns={sortedColumns} filteredRows={pageData} rowProperties={rowProperties} editor={ editor } />
+					<TableBody sortedColumns={sortedColumns} filteredRows={pageData} rowProperties={rowProperties} editor={ editor } fitTableToSpace = {fitTableToSpace} />
 				)}
 				<Pagination
 					currentPage={currentPage}

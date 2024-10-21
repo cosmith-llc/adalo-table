@@ -38,6 +38,19 @@ const getCellPadding = (rowProperties, isFirst, isLast) => {
     } : {};
 }
 
+const getBorderRadious = (isFirst, isLast) => {
+    const borderStyle = {};
+    if (isFirst) { 
+        borderStyle['borderBottomLeftRadius'] = '4px';
+        borderStyle['borderTopLeftRadius'] = '4px'; 
+    };
+    if (isLast) { 
+        borderStyle['borderBottomRightRadius'] = '4px';
+        borderStyle['borderTopRightRadius'] = '4px'; 
+    }
+    return borderStyle;
+} 
+
 const getCellStyle = (rowProperties, index, length) => {
     const isFirst = index === 0;
     const isLast = index + 1 === length;
@@ -50,8 +63,9 @@ const getCellStyle = (rowProperties, index, length) => {
     const bottom = getStyleForBorder('Bottom', color, width);
 
     const cellPadding = getCellPadding(rowProperties, isFirst, isLast);
+    const border = getBorderRadious(isFirst, isLast);
 
-    return {  ...left,  ...top, ...bottom, ...right, ...cellPadding }; 
+    return {  ...left,  ...top, ...bottom, ...right, ...cellPadding, ...border }; 
 }
 
 export default Row;

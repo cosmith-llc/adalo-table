@@ -146,6 +146,12 @@
       "type": "action",
       "displayName": "Button Click Action",
       "description": "Action to trigger when the button is clicked"
+    },
+    {
+      "name": "fitTableToSpace",
+      "type": "boolean",
+      "displayName": "fix table to whole container(width:100%)",
+      "default": false
     }
   ],
   "childComponents": [
