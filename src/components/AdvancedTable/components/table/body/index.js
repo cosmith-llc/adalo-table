@@ -2,8 +2,15 @@ import Row from "../row";
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 
-export default function TableBody({ sortedColumns, filteredRows, rowProperties, editor, fitTableToSpace }) {
-    const style = { borderSpacing:`0px ${rowProperties.rowBottonMargin}px` };
+export default function TableBody({ sortedColumns, filteredRows, rowProperties, editor, fitTableToSpace, headerBorderColor, headerBorderWidth  }) {
+    const style = {
+        borderSpacing: `0px ${rowProperties.rowBottonMargin}px`
+    };
+
+    const style2 = {
+        '--header-border-color': headerBorderColor || '#366AD0',
+        '--header-border-width': `${headerBorderWidth || 1}px`
+    }
     if (fitTableToSpace) {
         style["width"] = "100%";
     }
@@ -13,7 +20,7 @@ export default function TableBody({ sortedColumns, filteredRows, rowProperties, 
             {sortedColumns?.length === 0 ? (
                 <div className="table-no-data">Add some data data</div>
             ) : (
-                <div className= { `table-container  ${editor ? " editor": ""} ${fitTableToSpace ? 'fit-to-space':'adject-to-content' } ` }>
+                <div className= { `table-container  ${editor ? " editor": ""} ${fitTableToSpace ? 'fit-to-space':'adject-to-content' } ` } style={style2}>
                     <table className="table" style={ style }>
                         <thead>
                         <tr>

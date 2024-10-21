@@ -31,7 +31,8 @@
       "styles": {
         "fontFamily": "@heading",
         "fontWeight": "400",
-        "color": "@text",
+        "color": "#757575",
+        "textAlignment": "left",
         "fontSize": "26",
         "textAlign": "left"
       }
@@ -152,7 +153,27 @@
       "type": "boolean",
       "displayName": "fix table to whole container(width:100%)",
       "default": false
+    },
+    {
+      "name": "headerBorderColor",
+      "displayName": "Header Border Color",
+      "type": "color",
+      "defaultValue": "#366AD0",
+      "description": "Choose the color for the header border"
+    },
+    {
+      "name": "headerBorderWidth",
+      "displayName": "Header Border Width",
+      "type": "number",
+      "default": 1,
+      "description": "Specify the width of the header border",
+      "control": {
+        "type": "slider",
+        "min": 1,
+        "max": 10
+      }
     }
+
   ],
   "childComponents": [
     {
@@ -415,7 +436,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -539,7 +560,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -663,7 +684,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -788,7 +809,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -913,7 +934,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -1038,7 +1059,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -1177,7 +1198,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }
@@ -1302,7 +1323,7 @@
             "fontFamily": "@heading",
             "fontWeight": "600",
             "color": "#757575",
-            "textAlignment": "center",
+            "textAlignment": "left",
             "fontSize": "15",
             "textAlign": "left"
           }

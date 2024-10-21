@@ -1,3 +1,8 @@
+:root {
+    --header-border-color: #366AD0;
+    --header-border-width: 1px;
+}
+
 .table-container {
     width: 100%; /* Full width container */
     padding: 0 20px; /* Margins for left and right */
@@ -35,12 +40,11 @@
 
 }
 
-.fit-to-space .table thead th { 
-    /*border-bottom: none !important;*/
-    border-bottom: 2px solid #366AD0; /* This is the header border */
+.fit-to-space .table thead th {
+    border-bottom: var(--header-border-width, 1px) solid var(--header-border-color, #366AD0);
 }
 
-.adject-to-content .table thead th { 
+.adject-to-content .table thead th {
     border-bottom: none !important;
 }
 
@@ -48,11 +52,12 @@
     content: "";
     display: block;
     width: calc(100% - 40px); /* Ensure it spans the full container width */
-    height: 2px;
-    background-color: #366AD0; /* Match the border color */
+    height: var(--header-border-width, 1px);
+    background-color: var(--header-border-color, #366AD0);
     position: absolute;
-    top: 110px; /* Adjust to the height of the header */
+    top: 105px; /* Adjust to the height of the header */
 }
+
 
 .table-container.editor::before { 
     top: 120px;

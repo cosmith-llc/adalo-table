@@ -15,7 +15,7 @@ const Header = ({
                     buttonBorderRadius,
                     onButtonClick
                 }) => {
-    // Генерація стилів для кнопки через inline стилі
+
     const buttonStyle = {
         backgroundColor: buttonBackgroundColor,
         color: buttonTextColor,
@@ -26,9 +26,10 @@ const Header = ({
         borderRadius: `${buttonBorderRadius}px`,
     };
 
+
     return (
         <div className="table-header">
-            <h1 style={tableTitle?.styles}>{tableTitle}</h1>
+            <h1 style={tableTitle?.styles}> {tableTitle} </h1>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexGrow: 1, justifyContent: 'flex-end' }}>
                 <SearchBar setCurrentSearchWords={setCurrentSearchWords} />
                 {showButton && (
