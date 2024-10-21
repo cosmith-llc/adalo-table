@@ -23,7 +23,8 @@ export default function TableBody({ sortedColumns, filteredRows, rowProperties, 
                                     style={{
                                         ...column.styles,
                                         width: column.expandToFillSpace ? '100%' : 'auto',
-                                        textAlign: column.expandToFillSpace ? 'right' : 'left'
+                                        textAlign: column.expandToFillSpace ? 'right' : 'left',
+                                        paddingLeft: rowProperties.cellPadding
                                     }}
                                     className= { `${index === 0 ? "first" : ""}   ${index === sortedColumns.length - 1 ? "last" : ""}` }
                                 >

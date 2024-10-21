@@ -21,9 +21,14 @@
 }
 
 /* Only the border under the header row, spanning full width */
+
+.fit-to-space .table thead th,  .adject-to-content .table thead th{
+    padding-inline: 0
+}
+
 .table thead th {
     text-align: left !important;
-    padding: 10px;
+    padding: 10px 0;
     color: var(--font-color-title);
     background-color: transparent !important;
     
@@ -215,6 +220,7 @@
     vertical-align: middle;
     margin: 4px;
     border-radius: 4px;
+    object-fit: cover;
 }
 .cell-image-content {
     display: inline-block;
