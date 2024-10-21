@@ -23,10 +23,9 @@ export default function TableBody({ sortedColumns, filteredRows, rowProperties, 
                                     style={{
                                         ...column.styles,
                                         width: column.expandToFillSpace ? '100%' : 'auto',
-                                        textAlign: column.expandToFillSpace ? 'right' : 'left',
-                                        paddingLeft: rowProperties.cellPadding
-                                    }}
-                                    className= { `${index === 0 ? "first" : ""}   ${index === sortedColumns.length - 1 ? "last" : ""}` }
+                                        textAlign: column.expandToFillSpace ? 'right' : 'left', ...getPaddingStyles(index === 0, rowProperties)}
+                                    }
+                                    className= { `${index === 0 ? "first" : ""} ${index === sortedColumns.length - 1 ? "last" : ""} ${rowProperties.enableBorder ? "custom-border" : "no-custom-border"}` }
                                 >
                                     {column.title}
                                 </th>
@@ -45,3 +44,12 @@ export default function TableBody({ sortedColumns, filteredRows, rowProperties, 
     );
 }
 
+const getPaddingStyles = (isFisrt, rowProperties) => {
+    let paddingStyles = {}
+    if (rowProperties.overridePadding && !isFisrt) {
+        paddingStyles = { paddingLeft: rowProperties.cellPadding };
+    } else if (isFisrt) {
+        paddingStyles = { paddingLeft: '20px' };
+    }
+    return paddingStyles;
+}

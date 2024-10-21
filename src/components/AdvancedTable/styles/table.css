@@ -22,7 +22,7 @@
 
 /* Only the border under the header row, spanning full width */
 
-.fit-to-space .table thead th,  .adject-to-content .table thead th{
+.fit-to-space .table thead th.custom-border,  .adject-to-content .table thead th.custom-border {
     padding-inline: 0
 }
 
@@ -85,7 +85,7 @@
 /*.table th:first-child,*/
 /* Set fixed widths for the first and last columns */
 .table td:first-child {
-    width: 150px;
+    /* width: 150px; */
     padding-left: 0;
 }
 
