@@ -40,7 +40,8 @@ const AdvancedTable = (props) => {
 
 	// Simulate loading delay for data (e.g., API call)
 	useEffect(() => {
-		setTimeout(() => setLoading(false), 500); // You can replace this with actual data fetching logic
+		console.log('records', records)
+		if (typeof records !== 'undefined') setLoading(false); // You can replace this with actual data fetching logic
 	}, [records]);
 
 	useEffect(() => {
